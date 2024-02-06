@@ -1,0 +1,52 @@
+body {
+    /* font-family: Arial, sans-serif; */
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.contract-container {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+@media print {
+    /* Define a class to force a page break before printing */
+    .page-break { page-break-before: always; }
+}
+
+.paraCenter{
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+}
+
+input {
+    border: none; /* Removes the border */
+    outline: none; /* Removes the outline */
+    background: yellow;
+    color: black;
+}
+
+::placeholder {
+    font-weight: bold;
+    color: black;
+}
+
+ol { /* Style for the outer list */
+    list-style: decimal; /* Use decimal numbering */
+}
