@@ -33,7 +33,7 @@
             <!-- <label for="clientNameInput">[INSERT CLIENT NAME]</label> -->
             <h3 class="paraCenter" id="clientNamePlaceholder"></h3>
 
-            <input type="text" id="clientNameInput" placeholder="[INSERT CLIENT NAME]">
+            <b><input type="text" id="clientNameInput" placeholder="[INSERT CLIENT NAME]"></b>
             <!-- <input type="text" id="clientNameInput" placeholder="Insert Client Name" oninput="updateClientName()"> -->
             
             <p>
@@ -46,7 +46,7 @@
                 <h3><li>Payment Terms:</li></h3>
                 <ul>
                     <li>BMF Attorney’s fee 
-                        <input type="text" id="paymentAmountInput" placeholder="[Insert Payment Amount]"> <span id="paymentAmountPlaceholder"> </span>  (excluding VAT).
+                        <input type="text" id="paymentAmountInput" placeholder="[Insert Payment Amount]"> (excluding VAT).
                         The retainer fee can be paid upfront, or month-to-month and the payment terms can be payable as follows:
                     </li>
                     <ul>
@@ -68,13 +68,14 @@
                 <h3><li>Appointment:</li></h3>
                 <ol>
                     <li>The Client has procured the services of <strong>BMF Attorneys</strong> and hereby accepts the appointment as an independent contractor of the Client for a fixed period of time.</li>
-                    <li>The reason for this fixed-term contract is <strong> for the appointment and completion of the <input type="text" id="serviceDescriptionInput" placeholder="[Service Description]"></strong>  <span id="serviceDescriptionPlaceholder"></span>
+                    <li>The reason for this fixed-term contract is <strong> for the appointment and completion of the <input type="text" id="serviceDescriptionInput" placeholder="[Service Description]"></strong>  
+                        <!-- <span id="serviceDescriptionPlaceholder"></span> -->
                     </li>
                 </ol>
                 <b><h3><li>Duration</li></h3></b>
                     <ol>
-                        <li>Notwithstanding the date of signature hereof, this fixed term contract shall be deemed to have commenced on the <input type="date" id="startDateInput" placeholder="[insert start date]" ><span id="startDatePlaceholder"></span>  and will terminate, without further notice, on the <input type="date" id="endDateInput">
-                            <span id="endDatePlaceholder"></span> .
+                        <li>Notwithstanding the date of signature hereof, this fixed term contract shall be deemed to have commenced on the <input type="date" id="startDateInput" placeholder="[insert start date]" > and will terminate, without further notice, on the <input type="date" id="endDateInput" placeholder="[insert end date]">.
+                            <!-- <span id="endDatePlaceholder"></span> . -->
                         </li>
                             <li>The automatic termination of the contract on the Termination Date shall not be construed as a dismissal but as the completion of a fixed term contract.</li>
                     </ol>
@@ -99,55 +100,11 @@
 
         
         <button id="populateBtn" onclick="populateContract()">Populate Contract</button>
-        <button id="downloadBtn">Download Contract</button>
+        <button id="downloadBtn" disabled >Download Contract</button>
     
 
 
-            <!-- <p>
-                <span id="clientNamePlaceholder">[INSERT CLIENT NAME]</span><br>
-                Collectively referred herein as the “parties”
-            </p>
-        
-            <h2>Payment Terms:</h2>
-            <label for="paymentAmountInput">BMF Attorney’s fee</label>
-            <p>Service cost: <span id="paymentAmountPlaceholder"></span></p>
-             <input type="text" id="paymentAmountInput" placeholder="Insert Payment Amount" oninput="updatePaymentAmount()"> >
-        
-            <p>(excluding VAT).</p>
-
-            <p>BMF Attorney’s fee <span id="paymentAmountPlaceholder">[Insert Payment Amount]</span> (excluding VAT).</p>
-            <p>The retainer fee can be paid upfront, or month-to-month and the payment terms can be payable as follows:</p>
-            <p>Upfront:</p>
-            <ul>
-                <li>Three-twelfths of the fee during the probation period in 3 equal instalments by the 7th day of each month</li>
-                <li>Nine-twelfths of the fee upon conclusion of the probation period of employment payable on the 7th day of the 4th month.</li>
-            </ul>
-            <p>Month-to-month:</p>
-            <ul>
-                <li>The month-to-month fee shall be paid by the 7th day of each month</li>
-            </ul>
-            <p>No variation or amendment to this Agreement shall be of any effect unless such amendment is put in writing and signed by all parties</p>
-            <p>Any documentation prepared by BMF Attorneys remains its property</p>
-        
-            <h2>Appointment</h2>
-            <p>The Client has procured the services of BMF Attorneys and hereby accepts the appointment as an independent contractor of the Client for a fixed period of time.</p>
-            <label for="serviceDescriptionInput">Service Description:</label>
-            <input type="text" id="serviceDescriptionInput" placeholder="Insert Service Description" oninput="updateServiceDescription()">
-
-            <!- <p>The reason for this fixed-term contract is for the appointment and completion of the <span id="serviceDescriptionPlaceholder">[Service Description]</span></p> ->
-            <p>Service description: <span id="serviceDescriptionPlaceholder"></span></p>
-           
-        
-            <h2>Duration</h2>
-            <label for="startDateInput">Start Date:</label>
-            <input type="date" id="startDateInput" oninput="updateStartDate()">
-
-            <label for="endDateInput">End Date:</label>
-            <input type="date" id="endDateInput" oninput="updateEndDate()">
-            <p>Notwithstanding the date of signature hereof, this fixed term contract shall be deemed to have commenced on the <span id="startDatePlaceholder">[insert start date]</span> and will terminate, without further notice, on the <span id="endDatePlaceholder">[insert end date]</span>.</p>
-            <p>The automatic termination of the contract on the Termination Date shall not be construed as a dismissal but as the completion of a fixed term contract.</p> -->
-        
-            
+                       
         </div>
 
         <div class="footer" id="footer">

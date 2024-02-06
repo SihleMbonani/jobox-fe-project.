@@ -3,7 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     downloadBtn.addEventListener('click', downloadContract);
 
     const populateButton = document.getElementById('populateBtn');
-    populateButton.addEventListener('click', populateContract);
+    populateButton.addEventListener('click', function() {
+        populateContract();
+        changeInputBackground();
+        checkMandatoryFields();
+    });
 
 
     function populateContract() {
@@ -26,11 +30,53 @@ document.addEventListener('DOMContentLoaded', function() {
         serviceDescriptionPlaceholder.innerText = serviceDescription || "[Service Description]";
     }
     
-    
+    function changeInputBackground() {
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.style.backgroundColor = 'white';
+        });
+    }
+
     // Function to download the contract
     function downloadContract() {
-        
+        const pdf = new jsPDF();
+
+    // Get the content of your contract container element
+    const contractContent = document.querySelector('.contract-container');
+
+    // Add the content to the PDF document
+    pdf.html(contractContent, {
+        callback: function (pdf) {
+            // Save the PDF as a blob
+            const blob = pdf.output('blob');
+
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'contract.pdf';
+
+            // Trigger the download
+            link.click();
+        }
+    });
     }
+
+    function checkMandatoryFields() {
+        const clientName = document.getElementById('clientNameInput').value;
+        const startDate = document.getElementById('startDateInput').value;
+        const endDate = document.getElementById('endDateInput').value;
+        const paymentAmount = document.getElementById('paymentAmountInput').value;
+        const serviceDescription = document.getElementById('serviceDescriptionInput').value;
+
+        if (clientName && startDate && endDate && paymentAmount && serviceDescription) {
+            // If all mandatory fields are filled, enable the download button
+            downloadBtn.removeAttribute('disabled');
+        } else {
+            // If any mandatory field is empty, disable the download button
+            downloadBtn.setAttribute('disabled', 'disabled');
+        }
+    }
+
 });
 
     // const populateButton = document.getElementById('populateBtn');
